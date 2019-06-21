@@ -18,12 +18,10 @@ def compute_med(s1, s2, ins_cost=1, del_cost=1, sub_cost=1):
 		matr[row,0] = row
 	for col in range(matr.shape[1]): 
 		matr[0,col] = col 
-	print(matr)
 
 	# fill in the rest of the table
 	for row in range(1,source_len): 
 		for col in range(1,target_len):
-			print(row, col)
 			ins_dist = matr[row, col-1] + ins_cost
 			del_dist = matr[row-1, col] + del_cost
 			if source[row-1] == target[col-1]:
